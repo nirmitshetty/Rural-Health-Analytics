@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.back
+{
+    background-color:#e09439;
+    writing-mode:tb;
+    glyph-orientation-vertical:0;
+    letter-spacing:2;stroke:black;
+    stroke-width:1;
+}
+
+</style>
+<title>menu</title>
+</head>
+<body>
+
+<svg width="2000px" height="2000px">
+        <filter id="dropshadow" height="130%">
+  <feGaussianBlur in="SourceAlpha" stdDeviation="4"/> <!-- stdDeviation is how much to blur -->
+  <feOffset dx="2" dy="2" result="offsetblur"/> <!-- how much to offset -->
+  <feMerge> 
+    <feMergeNode/> <!-- this contains the offset blurred image -->
+    <feMergeNode in="SourceGraphic"/> <!-- this contains the element that the filter is applied to -->
+  </feMerge>
+</filter>
+        
+        <a href="overview.html"><circle  id="c1" cx="290" cy="100" r="35" fill="#FFE27A" onmousemove="move1()" onmouseout="out1()" >
+        <animate attributeName="cx" attributeType="XML"
+             from="550"  to="290"
+             begin="0s" dur="5s"
+             fill="freeze" />
+        <animate attributeName="cy" attributeType="XML"
+             from="250"  to="100"
+             begin="0s" dur="5s"
+             fill="freeze" />
+        <!--<text x="0" y="" fill="red">I love SVG!</text>-->
+        </circle></a>
+    
+    
+        <a href="keyword.html">
+        <circle id="c2" cx="1020" cy="100" r="35"  fill="#75EBB0" onmousemove="move2()" onmouseout="out2()">
+            <animate attributeName="cx" attributeType="XML"
+             from="800"  to="1020"
+             begin="0s" dur="5s"
+             fill="freeze" />
+            <animate attributeName="cy" attributeType="XML"
+             from="250"  to="100"
+             begin="0s" dur="5s"
+             fill="freeze" />
+        <!--<text x="0" y="" fill="red">I love SVG!</text>-->
+         </circle></a>
+    
+    
+        <a href="map.html">
+        <circle  id="c3" cx="1020" cy="500" r="35"  fill="#8CDDF3" onmousemove="move3()" onmouseout="out3()">
+            <animate attributeName="cx" attributeType="XML"
+             from="800"  to="1020"
+             begin="0s" dur="5s"
+             fill="freeze" />
+            <animate attributeName="cy" attributeType="XML"
+             from="400"  to="500"
+             begin="0s" dur="5s"
+             fill="freeze" />
+        <!--<text x="0" y="" fill="red">I love SVG!</text>-->
+        </circle></a>
+    
+    
+    
+        <a href="http://localhost:8888/notebooks/kanoe_project/notebook/india.ipynb"><circle id="c4" cx="290" cy="500" r="35"  fill="#FFA27A" onmousemove="move4()" onmouseout="out4()">
+           <animate attributeName="cx" attributeType="XML"
+             from="550"  to="290"
+             begin="0s" dur="5s"
+             fill="freeze" />
+            <animate attributeName="cy" attributeType="XML"
+             from="400"  to="500"
+             begin="0s" dur="5s"
+             fill="freeze" />
+        <!--<text x="0" y="" fill="red">I love SVG!</text>-->
+        </circle></a>
+        
+        <rect x="580" y="250" height="140" width="189"
+        style="stroke:#2f2d2d; fill:none;stroke-width:15"/>
+        <circle id="c5" cx="675" cy="320" r="35"
+            style="stroke:#d8d6d4;
+           stroke-width: 7;
+           stroke-dasharray: 15 5;
+           fill:none">
+             <animateTransform attributeType="xml"
+
+                   attributeName="transform"
+
+                    type="rotate"
+
+                    from="0 675 320"
+
+                    to="360 675 320"
+
+                    dur="10s"
+
+                    repeatCount="indefinite"/>
+        </circle>
+        
+        <text x="645" y="170" style="letter-spacing:2;font-family:serif;font-size:29px;stroke:black;stroke-width:1">Menu</text>
+        <text x="624" y="220" style="font-size:20px; fill:#c7c7c7;stroke:#c7c7c7;stroke-width:1">Choose a topic</text>
+        <a  href="home.html"><text  class="back" x="15" y="500" >BACK</text></a>
+ 
+        <text id="select" x="575" y="500" style="font-family:florence,cursive;font-size:40px"></text>
+        
+ 
+ 
+ </svg>
+ 
+ <script>
+ var center=document.getElementById("c5");
+ var circ1=document.getElementById("c1");
+ var circ2=document.getElementById("c2")
+ var circ3=document.getElementById("c3")
+ var circ4=document.getElementById("c4")
+ var field=document.getElementById("select");
+ function move1()
+ {
+    center.style.fill="#FFE27A";
+    circ1.style.filter="url(#dropshadow)";
+    field.innerHTML="Overview";
+    
+ }
+  function move2()
+ {
+    center.style.fill="#75EBB0";
+    circ2.style.filter="url(#dropshadow)";
+    field.innerHTML="Keywords";
+ }
+  function move3()
+ {
+    center.style.fill="#8CDDF3";
+    circ3.style.filter="url(#dropshadow)";
+    field.innerHTML="Statewise Analytics";
+ }
+  function move4()
+ {
+    center.style.fill="#FFA27A";
+    circ4.style.filter="url(#dropshadow)";
+    field.innerHTML="India Analytics";
+ }
+ 
+  function out1()
+ {
+    center.style.fill="white";
+    circ1.style.filter="url()";
+    field.innerHTML="";
+ }
+  function out2()
+ {
+    center.style.fill="white";
+    circ2.style.filter="url()";
+    field.innerHTML="";
+ }
+  function out3()
+ {
+    center.style.fill="white";
+    circ3.style.filter="url()";
+    field.innerHTML="";
+ }
+  function out4()
+ {
+    center.style.fill="white";
+    circ4.style.filter="url()";
+    field.innerHTML="";
+ }
+ 
+ </script>
+ 
+</body>
+</html>
+
